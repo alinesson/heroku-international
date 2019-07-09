@@ -1,0 +1,26 @@
+<div id="hamburger"><%=image_tag('/assets/menu.png') %></div>
+<div class="content">
+  <%=link_to refinery.url_for(root_path) do %>
+    <div class="logo"></div></a>
+  <% end %>
+  <%= render ('shared/lang-switcher') %>
+  <div id="secondary-menu">
+    <ul>
+      <% if I18n.locale.to_s == 'en' %>
+      <li>
+          <%= link_to "Press", refinery.url_for('press') %>
+      </li>
+      <li>
+        <%= link_to "Contact Us", refinery.url_for('contact-us') %>
+      </li>
+      <% else %>
+      <li>
+          <%= link_to "في وسائل الإعلام", refinery.url_for('press') %>
+      </li>
+      <li>
+        <%= link_to "الاتصال بنا", refinery.url_for('contact-us') %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="content">
+  <div id="footer-nav">
+    <%= copywriting('Footer Navigation', { :scope => 'footer', :default => "Nav", :phrase_type => 'wysiwyg' }).html_safe do %>
+      Navigation
+    <% end %>
+  </div>
+
+  <div id="contact-card">
+    <%= copywriting('Footer Contact Info', { :scope => 'footer', :default => "Info", :phrase_type => 'wysiwyg' }).html_safe do %>
+      Contact Info
+    <% end %>
+  </div>
+</div>
+
+<div id="endmatter">
+  <p class="center">
+    <%= copywriting('Footer Copyright', { :scope => 'footer', :default => "Copyright", :phrase_type => 'wysiwyg' }).html_safe do %>
+        Copyright
+    <% end %>
+  </p>
+</div>

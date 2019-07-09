@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+  </head>
+
+  <body id="<%= canonical_id @page %>">
+    <%= render ('shared/linkbar') %>
+    <div id="hamburger-menu">
+      <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+    </div>
+    
+    <header id="header">
+      <%= render '/shared/pre-header' %>
+    </header>
+
+    <header id="subhead">
+      <div class="content">
+        <%= render "/refinery/header" -%>
+      </div>
+    </header>
+
+    <div id="page_container">
+
+      <div id="carousel-controls">
+        <!-- controls -->
+        <div class="cycle-prev"></div>
+        <div class="cycle-next"></div>
+      </div>
+
+      <div id="carousel" class="cycle-slideshow" 
+        data-cycle-slides=".slide"
+        data-cycle-timeout=9000
+        data-cycle-swipe="true"
+        data-cycle-fx=fade
+        data-cycle-speed="600"
+        data-cycle-prev=".cycle-prev"
+        data-cycle-next=".cycle-next"
+        data-cycle-pager=".cycle-pager"
+        data-cycle-swipe=true 
+      >
+
+        <div class="slide">
+          <%= raw @page.content_for(:carousel_a) %>
+        </div>
+
+        <div class="slide">
+          <%= raw @page.content_for(:carousel_b) %>
+        </div>
+
+        <div class="slide">
+          <%= raw @page.content_for(:carousel_c) %>
+        </div>
+
+      </div>
+
+      <div id="status-bar">
+        <div class="cycle-pager"></div>
+      </div>
+
+      <div id="talker">
+        <%= raw @page.content_for(:intro) %>
+      </div>
+
+      <div id="features">
+
+        
+        <div class="feature" id="overview">
+          <%=link_to refinery.url_for('childrens-in-mena') do %>
+          <div class="link-button"></div>
+          <% end %>
+          <div class="caption">
+            <%= raw @page.content_for(:feature_a) %>
+          </div>
+        </div>
+
+        <div class="feature" id="knowledge">
+          <%=link_to refinery.url_for('knowledge-sharing') do %>
+          <div class="link-button"></div>
+          <% end %>
+          <div class="caption">
+            <%= raw @page.content_for(:feature_b) %>
+          </div>
+        </div>
+
+        <div class="feature omega" id="press">
+          <%=link_to refinery.url_for('press') do %>
+          <div class="link-button"></div>
+          <% end %>
+          <div class="caption">
+            <%= raw @page.content_for(:feature_c) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <footer>
+      <%= render "/refinery/footer" -%>
+    </footer>
+    
+    <%= render "/refinery/javascripts" %>  
+    <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZG8JT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZG8JT');</script>
+<!-- End Google Tag Manager -->
+  </body>
+</html>

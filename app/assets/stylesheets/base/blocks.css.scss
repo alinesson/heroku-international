@@ -1,0 +1,184 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "base/base";
+@import "base/colors";
+@import "base/typography";
+@import "responsive";
+
+/* Containers
+-----------------------------*/
+
+.content {
+  width: 100%;
+  margin: auto;
+  padding: 40px;
+}
+
+/* Refinery Rudiments
+-----------------------------*/
+
+#page_container {
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  clear: both;
+
+  @include breakpoint(large) {
+    width: $base-width;
+  }
+  @include breakpoint(medium) {
+    width: $base-width / 1.5; 
+  }
+  @include breakpoint(small) {
+    width: 420px; 
+  }
+  @include breakpoint(retina_phone) {
+    width: 640px;
+  }
+}
+
+#page {
+  margin-top: $base-padding;
+
+  h1 {
+    @include adjust-font-size-to(64px);
+    color: $red;
+    margin-bottom: $base-padding;
+    @include base-font(300);
+  }
+
+  @include breakpoint(large) {
+    width: $base-width;
+  }
+  @include breakpoint(medium) {
+    width: $base-width / 1.5; 
+  }
+  @include breakpoint(small) {
+    width: 420px; 
+  }
+  @include breakpoint(retina_phone) {
+    width: 640px;
+  }
+}
+
+#body {
+  float: left;
+  @include breakpoint(large) {
+    width: 560px;
+  }
+  @include breakpoint(medium) {
+    width: 560px; 
+  }
+  @include breakpoint(small) {
+    width: 420px; 
+  }
+  @include breakpoint(retina_phone) {
+    width: 640px;
+  }
+  margin-right: 40px;
+
+  h2 {
+    margin-top: $base-padding / 2;
+    clear: both;
+  }
+
+  img {
+    border: 8px solid #fff;
+    outline: 1px solid #efefef;
+    @include box-shadow(0 3px 7px #d7d7d7);
+    margin-right: 17px;
+    margin-left: 3px;
+  }
+  .image-align-left {
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  .image-align-right {
+    float: right;
+    margin-left: 20px !important;
+    margin-right: 0 !important;
+  }
+}
+
+#side_body {
+  width: 270px;
+  float: right;
+  background: url('/assets/shadow.png') top left no-repeat;
+  @include breakpoint(medium) { display: none; }
+  @include breakpoint(small) { display: none; }
+  min-height: 600px;
+  padding-left: $base-padding;
+  margin-top: $base-padding;
+
+  h2 {
+    color: $red;
+    @include adjust-font-size-to(24px);
+    margin-bottom: 10px;
+    line-height: 27px !important;
+  }
+}
+
+footer {
+  width: 100%;
+  margin: 80px auto 0;
+  clear: both;
+  background: darken($daring, 10%);
+  position: relative;
+  position: relative;
+  z-index: 99;
+
+  .content {
+    padding: 0;
+    margin: auto;
+    width: $base-width;
+    overflow: hidden;
+  }
+
+  ul {
+    li {
+      line-height: 25px;
+    }
+  }
+
+  #endmatter {
+    clear: both;
+    background: darken($daring, 15%);
+    width: 100%;
+    overflow: hidden;
+    padding: $base-padding 0;
+  }
+
+  #footer-nav, #contact-card {
+    float: left;
+    width: 40%;
+    margin: $base-padding;
+    @include breakpoint(retina_phone) { clear: left; width: 75%; }
+    @include breakpoint(medium) { clear: left; width: 75%; }
+    @include breakpoint(small) { clear: left; width: 75%; }
+  }
+
+  h3 {
+    color: #777;
+    @include base-font(200);
+    border-bottom: 1px solid #777;
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: $dk_blue;
+    text-decoration: none;
+  }
+
+  p {
+    color: #888;
+    font-size: 14px;
+  }
+  .center {
+    text-align: center;
+  }
+}
+
+.clear {
+  clear: both;
+}

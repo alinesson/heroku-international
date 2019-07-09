@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  #database: db/development.sqlite3
+  database: mena_dev
+  encoding: utf-8
+  host: localhost
+
+test:
+  adapter: postgresql
+  #database: db/test.sqlite3
+  database: mena_test
+  encoding: utf-8
+  host: localhost
+
+production:
+  adapter: postgresql
+  #database: db/production.sqlite3
+  database: mena_production
+  encoding: utf-8
+  host: localhost

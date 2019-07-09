@@ -1,0 +1,19 @@
+@import "base/base";
+
+@mixin breakpoint($point) {
+  @if $point == large { // really large, includes retina_phone macbooks and super large displays
+    @media screen and (max-width: 9000px) { @content; }
+  }
+  @else if $point == medium {
+    @media screen and (max-width: 980px) { @content; }
+  }
+  @else if $point == small {
+    @media screen and (max-width: 480px)  { @content; }
+  }
+  @else if $point == xsmall { // older (much older) blackberry handsets
+    @media handheld and (max-width: 240px)  { @content; } 
+  }
+  @else if $point == retina_phone_phone {
+    @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) { @content; }
+  }
+}

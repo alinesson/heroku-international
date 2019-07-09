@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+  </head>
+
+  <body id="<%= canonical_id @page %>">
+    <%= render ('shared/linkbar') %>
+    <div id="hamburger-menu">
+      <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+    </div>
+    <header id="header">
+      <%= render '/shared/pre-header' %>
+    </header>
+
+    <header id="subhead">
+      <div class="content">
+        <%= render "/refinery/header" -%>
+      </div>
+    </header>
+
+    <div id="page_container">
+      <div id="page">
+
+        <% if I18n.locale.to_s == 'en' %>
+          <h1>Press &amp; Media Coverage</h1>
+        <% else %>
+          <h1>الصحافة والتغطية الإعلامية</h1>
+        <% end %>
+        <div class="leftcolumn">
+          <%= raw @page.content_for(:lead_story) %>
+
+          <div class="subfeature">
+            <%= raw @page.content_for(:sub_a) %>
+          </div>
+          <div class="subfeature">
+            <%= raw @page.content_for(:sub_b) %>
+          </div>
+          <div class="subfeature">
+            <%= raw @page.content_for(:sub_c) %>
+          </div>
+          <div class="clear"></div>
+          <% if I18n.locale.to_s == 'en' %>
+            <h2>News Archives</h2>
+          <% else %>
+            <h1>اأرشيف الأخبار</h1>
+          <% end %>
+          <%= raw @page.content_for(:body) %>
+        </div>
+        <div class="rightcolumn">
+          <%= raw @page.content_for(:side_body) %>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <%= render "/refinery/footer" -%>
+    </footer>
+    <%= render "/refinery/javascripts" %>
+
+    <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZG8JT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZG8JT');</script>
+<!-- End Google Tag Manager -->
+  </body>
+</html>

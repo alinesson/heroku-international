@@ -1,0 +1,56 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "base/base";
+@import "base/colors";
+@import "base/typography";
+@import "base/blocks";
+
+/* Arabic language support
+/* This sheet changes the display parameters
+/* of some page elements to accomodate rtl reading
+------------------------------ */
+
+body.arabic {
+  * {
+    direction: rtl;
+  }
+
+  .cycle-overlay  {
+    text-align: center !important;
+  }
+
+  nav.menu ul li {
+    float: right !important;
+    font-size: 13px !important;
+  }
+
+  // Flip column positions
+  #body {
+    float: right;
+    margin: 0;
+  }
+  #side_body {
+    text-align: right;
+    direction: rtl;
+    float: left;
+    background-image: none;
+    padding: 0 $base-padding 0 0;
+    margin: 0 $base-padding 0 0;
+  }
+
+  // Flip pre-header information
+  #header {
+    position: relative;
+    z-index: 99999;
+    .logo {
+      float: right !important;
+      display: block;
+    }
+    #secondary-menu {
+      float: left !important;
+    }
+    .lang-menu {
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<div class="lang-menu">
+  <% if I18n.locale.to_s == 'en' %>
+    <%= link_to 'عربي'.upcase, refinery.url_for(params.merge(:locale => 'ar')) %>
+  <% else %>
+    <%= link_to 'English', refinery.url_for(params.merge(:locale => 'en')) %>
+<% end %>
+</div>

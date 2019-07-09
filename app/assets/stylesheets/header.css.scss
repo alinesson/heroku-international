@@ -1,0 +1,256 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "base/base";
+@import "base/colors";
+@import "base/typography";
+@import "base/blocks";
+@import "responsive";
+
+/* Global Header Styles
+-----------------------------------*/
+
+
+header {
+  background: #fff;
+  padding: 0;
+  position: relative;
+
+  #hamburger {
+    float: left;
+    height: 67px;
+    width: 67px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 67px;
+    color: #fff;
+    cursor: pointer;
+
+    @include breakpoint(large) {
+      display: none;
+    }
+    @include breakpoint(medium) {
+      display: block;
+    }
+    @include breakpoint(small) {
+      display: block;
+    }
+    @include breakpoint(retina_phone) {
+      display: block;
+    }
+  }
+
+  .content { // First child container of header
+    padding: 0;
+    @include breakpoint(large) {
+      width: $base-width;
+    }
+    @include breakpoint(medium) {
+      width: $base-width / 1.5; 
+    }
+    @include breakpoint(small) {
+      width: 420px; 
+    }
+    @include breakpoint(retina_phone) {
+      width: 480px;
+    }
+  }
+
+  .logo {
+    float: left;
+    background: #fff url('/assets/logo.jpg') center center no-repeat;
+    height: 120px;
+    width: 238px; 
+    position: relative;
+  }
+
+  #secondary-menu {
+    float: right;
+    margin-right: 20px;
+    @include breakpoint(small) {
+      display: none;
+    }
+    @include breakpoint(retina_phone) {
+      display: none;
+    }
+
+    li {
+      float: left;
+      margin-top: 34px;
+      color: #fff;
+      padding: 10px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .lang-menu {
+    float: right;
+    margin-top: 44px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  &#header {
+    background: $red;
+    width: 100%;
+    margin: auto;
+    height: 67px;
+  }
+
+  &#subhead {
+    margin: auto;
+    @include breakpoint(medium) { display: none; }
+    @include breakpoint(small) { display: none; }
+    @include breakpoint(retina_phone) { display: none; }
+    @include transition(all 0.20s ease-in-out);
+    width: 100%;
+    position: relative;
+    height: auto;
+    z-index: 99;
+
+    .content {
+      background: #fff;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: $base-width;
+      padding: 0;
+
+      nav.menu {
+        width: $base-width;
+        margin: 60px auto 0;
+        @include base-font(400);
+
+        ul {
+          clear: both;
+
+          li {
+            float: left;
+            list-style: none;
+            padding: 20px 10px 10px;
+            position: relative;
+            width: 136px;
+            background: #fff;
+            @include adjust-font-size-to(18px); 
+            @include transition(all 0.20s ease-in-out);
+
+            // For IE8
+            &#page12 {
+              border-bottom: 15px solid $lt_orange;
+              &:hover,
+              &.selected {
+                background: $lt_orange;
+                ul li {
+                  background: $lt_orange;
+                }
+              }
+            }
+            &#page13 {
+              border-bottom: 15px solid $red;
+              &:hover,
+              &.selected {
+                background: $red;
+                ul li {
+                  background: $red;
+                }
+              }
+            }
+            &#page16 {
+              border-bottom: 15px solid #0072ac;
+              &:hover,
+              &.selected {
+                background: #0072ac;
+              }
+            }
+            &#page17 {
+              border-bottom: 15px solid $green;
+              &:hover,
+              &.selected {
+                background: $green;
+                ul li {
+                  background: $green;
+                }
+              }
+            }
+            &#page19 {
+              border-bottom: 15px solid $teal;
+              &:hover,
+              &.selected {
+                background: $teal;
+                ul li {
+                  background: $teal;
+                }
+              }
+            }
+            &#page22 {
+              border-bottom: 15px solid $taupe;
+              &:hover,
+              &.selected {
+                background: $taupe;
+                ul li {
+                  background: $taupe;
+                }
+              }
+            }
+
+            &.last {
+              width: 139px;
+            }
+
+            &.selected {
+              a {
+                color: #fff;
+              }
+            }
+
+            &:hover {
+              a {
+                color: #fff;
+              }
+            }
+
+            a {
+              text-decoration: none;
+              color: #444;
+            }
+
+            ul {
+              display: none;
+            }
+            &:hover {
+              ul {
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 63px;
+                min-width: 200px;
+                z-index: 9999999;
+
+                li {
+                  float: left;
+                  clear: both;
+                  color: #666;
+                  width: 200px;
+                  border-bottom: none;
+                  padding: 10px;
+                  font-style: italic;
+                  @include adjust-font-size-to(14px);
+
+                  a {
+                    color: transparentize(#fff, 0.2);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
